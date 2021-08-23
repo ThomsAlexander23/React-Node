@@ -6,6 +6,14 @@ const http = require("http");
 //using express
  const express = require("express");
  const app = express();
+ app.use((req,res, next) => {
+  console.log('In the middleware')
+ });
+
+ // next moves us to the next app.use
+ app.use((req,res, next) => {
+  console.log('In the middleware')
+ });
 
 //old vanilla node.js
 // const server = http.createServer(routes);
