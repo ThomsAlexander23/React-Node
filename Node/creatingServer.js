@@ -6,13 +6,17 @@ const http = require("http");
 //using express
  const express = require("express");
  const app = express();
+
+// next moves us to the next app.use
  app.use((req,res, next) => {
-  console.log('In the middleware')
+  console.log('In the middleware');
+  next();
  });
 
- // next moves us to the next app.use
+ // send ends the flow and sends the response to the browser
  app.use((req,res, next) => {
-  console.log('In the middleware')
+  console.log('In the next middleware');
+  res.send('<h1>Hello from Express</h1>');
  });
 
 //old vanilla node.js
@@ -22,3 +26,4 @@ const server = http.createServer(app);
 
 
 server.listen(3000);
+//sdfasdf
