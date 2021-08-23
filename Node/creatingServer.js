@@ -1,7 +1,16 @@
 const http = require("http");
 
-const routes = require("./routes");
+//old vanilla node.js
+// const routes = require("./routes");
 
-const server = http.createServer(routes);
+//using express
+ const express = require("express");
+ const app = express();
+
+//old vanilla node.js
+// const server = http.createServer(routes);
+
+const server = http.createServer(app);
+
 
 server.listen(3000);
