@@ -8,14 +8,15 @@ const http = require("http");
  const app = express();
 
 // next moves us to the next app.use
- app.use((req,res, next) => {
-  console.log('In the middleware');
-  next();
+// use path farther in the app vs starting with root path
+ app.use('/add-product',(req,res, next) => {
+  console.log('In the add product path');
+  res.send('<h1>Hello from add product Express</h1>');
  });
 
  // send ends the flow and sends the response to the browser
  app.use((req,res, next) => {
-  console.log('In the next middleware');
+  console.log('In the root path');
   res.send('<h1>Hello from Express</h1>');
  });
 
