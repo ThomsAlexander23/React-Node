@@ -1,3 +1,4 @@
+const path = require('path');
 //using express
 const express = require("express");
 const app = express();
@@ -7,8 +8,12 @@ const adminRoutes = require("./routes/admin");
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(adminRoutes);
+app.use('/admin', adminRoutes);
 
 app.use(shopRoutes);
+
+app.use((req,res, next) => {
+  res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+});
 
 app.listen(4000);
