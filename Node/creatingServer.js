@@ -5,6 +5,10 @@ const app = express();
 
 const shopRoutes = require("./routes/shop");
 const adminData = require("./routes/admin");
+const { purge } = require('./routes/shop');
+
+app.set('view engine', 'pug');
+app.set('views', 'views');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
