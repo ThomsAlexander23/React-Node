@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"node","dependencies":{"body-parser":{"version":"1.19.0"},"ejs":{"version":"3.1.6"},"express-handlebars":{"version":"5.3.3"},"express":{"version":"4.17.1"},"pug":{"version":"3.0.2"}}}
